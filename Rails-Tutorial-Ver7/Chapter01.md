@@ -46,6 +46,19 @@ Rails.application.configure do
 end
 ```
 
+## 1.3.3 MVC
+- render html: "hello, world"
+- routerとは  
+  コントローラとブラウザの間に配置されブラウザからのリクエストをコントローラに振り分ける役割を持つ。
+  ```ruby:routes.rb
+  # ブラウザから「/」が実行されると、applicationコントローラのhelloアクションが実行される。
+  root "application#hello"
+  ```
 
-
+## 1.4.1 Git
+- cloud ideではデフォルトでGitが入っている
+  ```ruby:git.rb
+  # Git バージョンを上げる
+  $ source <(curl -sL https://cdn.learnenough.com/upgrade_git)
+  ```
 
