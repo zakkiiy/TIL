@@ -137,3 +137,26 @@ b = " on Rails"
 a.concat b
 a.reverse
 p a.index("R", 1)
+
+def foo(x:, y:, z:)
+  p [x, y, z]
+end
+
+h = {x: 1, y: 2, z: 3}
+foo(**h)
+
+a = [2,4,6,8,10]
+p a.shift
+p a.pop
+a.push(12)
+p a
+
+x = true
+true || exit(1)
+puts("succeeded!")
+
+x = [ 9, 7, 5, 3, 1 ]
+p x[1..3]
+
+ary = [ 1, 2, 3, 4, 5 ]
+p ary.filter { |i| i.odd? }
