@@ -96,3 +96,99 @@ irb(main):222> p ["apple", "banana"] & ["banana", "carrot"]
 ["banana"]
 => ["banana"]
 ```
+
+シンボルの配列を簡単に作るためのリテラル記法だ
+```ruby
+p %i(x1 x2 x3)
+[:x1, :x2, :x3]
+=> [:x1, :x2, :x3]
+```
+
+クラスのスーパークラスを明示的に指定しなかった場合、
+`Objectクラスがスーパークラスになる`
+```ruby
+class aaa
+end
+```
+
+Rubyのクラス階層において、Object クラスはほぼすべてのオブジェクトの基底クラスとなっています。このため、Object クラスにメソッドを追加すると、そのメソッドはほとんどすべてのオブジェクトで使用可能になります。
+```ruby
+class Object
+  def moo
+    puts "MOO!"
+  end
+end
+
+"Cow".moo
+```
+
+```ruby
+class Foo
+  attr_reader :var
+  def initialize
+    @var = "apple"
+  end
+end
+
+class Bar < Foo
+  def initialize
+    @var = "banana"
+    super
+  end
+end
+
+bar = Bar.new
+puts bar.var
+```
+
+このコード例における動作を解説すると、Bar クラスが Foo クラスから継承されており、両方のクラスに initialize メソッドが定義されています。super キーワードは、サブクラス（この場合は Bar）のメソッドから親クラス（この場合は Foo）の同名のメソッドを呼び出すために使用されます。
+
+コードの実行順序
+Bar のインスタンスが生成されると、Bar の initialize メソッドが呼ばれます。
+Bar の initialize メソッド内で、インスタンス変数 @var に "banana" が代入されます。
+super が呼ばれると、Foo の initialize メソッドが実行されます。このメソッド内で、@var に "apple" が再代入されます。
+Foo の initialize が完了した後、Bar の initialize も完了します。
+結果
+結果的に、Bar のインスタンスで @var を呼び出すと、"apple" が出力されます。これは、Foo の initialize メソッドで @var が "banana" から "apple" に上書きされたためです。
+
+super の意味
+super を使うと、現在のメソッドと同じ名前の親クラスのメソッドが呼び出されます。これにより、サブクラスで拡張または変更したい処理を行った上で、親クラスの元の処理も適用させることができます。ただし、このケースでは、super の呼び出しによってサブクラスで設定した値が親クラスのメソッドで上書きされてしまっています。
+
+まとめ
+この例では、super の使用方法と、サブクラスから親クラスのメソッドをどのように呼び出すかが示されています。super の位置によって親クラスのメソッドがいつ呼ばれるかを制御することが重要であり、変数の値がどのように影響を受けるかを理解する必要があります。
+
+```ruby
+r = "a".."e"
+=> "a".."e"
+irb(main):239> 
+irb(main):240> p r.to_a
+["a", "b", "c", "d", "e"]
+=> ["a", "b", "c", "d", "e"]
+irb(main):241> 
+```
+
+- `find`
+ブロックの値が最初に真となる要素を返す。
+detectという別名がある
+```ruby
+p [0,1,2,3,4,5].find {|x| x < 3}
+0
+=> 0
+```
+
+```ruby
+p [1,16,8,4,2].sort.reverse
+[16, 8, 4, 2, 1]
+=> [16, 8, 4, 2, 1]
+p [1,16,8,4,2].reverse.sort
+[1, 2, 4, 8, 16]
+=> [1, 2, 4, 8, 16]
+irb(main):248> p [1,16,8,4,2].sort_by { |x| -x }
+[16, 8, 4, 2, 1]
+=> [16, 8, 4, 2, 1]
+irb(main):249> p [1,16,8,4,2].sort_by { |x| x }
+[1, 2, 4, 8, 16]
+=> [1, 2, 4, 8, 16]
+irb(main):250> 
+```
+
