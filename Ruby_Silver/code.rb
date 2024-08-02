@@ -58,3 +58,38 @@ puts("succeeded!")
 
 ary = [ 1, 2, 3, 4, 5 ]
 p ary.filter { |i| i.odd? }
+
+begin
+  puts 1 + "2"
+rescue
+  puts "Error ."
+rescue TypeError
+  puts "Type Error"
+ensure
+  puts " ensure"  
+end
+
+begin 
+  puts 10 / 0
+rescue
+  p "0では割れません"
+end
+
+# rescue => e でエラー内容を eに 格納することができる
+begin
+  10 / 0
+rescue => e
+  puts e
+end
+
+begin
+  puts aaa
+rescue => e
+  
+  puts e
+end
+
+num = 10 / 2
+raise
+p num + 2
+
