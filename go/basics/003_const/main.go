@@ -10,7 +10,7 @@ import "fmt"
 const Pi = 3.14
 const (
 	// 複数の定数をまとめて定義
-	URL = "https://example.com"
+	URL  = "https://example.com"
 	Port = 8080
 )
 

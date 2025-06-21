@@ -9,7 +9,7 @@ import (
 func main() {
 	fmt.Println("Hello, World!")
 	fmt.Println(time.Now())
-	
+
 	// 明示的な変数定義
 	var i int = 100
 	fmt.Println(i)
@@ -23,7 +23,7 @@ func main() {
 
 	// 異なる型の変数をまとめて定義
 	var (
-		i2 int     = 1
+		i2 int    = 1
 		s2 string = "Hello, Go!"
 	)
 	fmt.Println(i2, s2)
