@@ -62,3 +62,11 @@
   - 並列処理
 - init
   - 初期化処理
+
+### [008_reference_type](./008_reference_type)
+- slice
+  - 可変長引数
+  - make関数でslice生成
+  - sliceの操作
+    - make, append, len, cap
+  - slice for
