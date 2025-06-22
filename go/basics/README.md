@@ -27,9 +27,14 @@
 ### [004_operators](./004_operators)
 なし
 
-### [004_operators](./004_operators) 
+### [005_function](./005_function) 
 - 関数
 - 無名関数
 - 関数を返す関数
 - 関数を引数に取る関数
 - 可変長引数
+
+### [006_closure](./006_closure) 
+- クロージャー
+  - 値を保持
+- ジェネレーター
