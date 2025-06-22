@@ -50,3 +50,15 @@
   - slice
   - map
 - switch
+  - switch
+  - 型switch
+- defer
+  - defer
+  - ファイルのクローズ処理
+- panic
+  - panic
+  - recover()
+- goroutin
+  - 並列処理
+- init
+  - 初期化処理
