@@ -9,13 +9,11 @@ import (
 // 簡単に並行処理が実装可能
 
 func sub() {
-	for  {
+	for {
 		fmt.Println("sub loop")
 		time.Sleep(100 * time.Millisecond) // 100ミリ秒待機
 	}
 }
-
-
 
 func main() {
 	go sub()

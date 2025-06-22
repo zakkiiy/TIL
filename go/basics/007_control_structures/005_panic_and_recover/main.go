@@ -8,7 +8,7 @@ func main() {
 			fmt.Println("Recovered from panic:", r) // パニックから回復: runtime error
 		}
 	}()
-	panic("runtime error") // パニックを発生させる panic: runtime error
+	panic("runtime error")                        // パニックを発生させる panic: runtime error
 	fmt.Println("This line will not be executed") // この行は実行されない
 }
 
