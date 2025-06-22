@@ -88,4 +88,8 @@
 - 構造体の埋め込み
 - struct型コンストラクタ
 - slice
-- map
+- map 
+
+### [011_interface](./011_interface)
+- interface
+
