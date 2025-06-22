@@ -70,3 +70,11 @@
   - sliceの操作
     - make, append, len, cap
   - slice for
+- map
+  - map
+  - map for
+  - makeを使用したmap生成
+  - 関数
+
+### [009_pointers](./009_pointers)
+- ポインタ型
